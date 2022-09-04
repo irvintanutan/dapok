@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AdditionalInformationFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.AdditionalInformationActivity">
+
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_20sdp">
+
+            <TextView
+                android:gravity="center"
+                android:text="Additional Information"
+                android:layout_width="match_parent"
+                android:textColor="@color/primaryColor"
+                android:fontFamily="@font/francois_one"
+                android:textSize="@dimen/_26sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:gravity="center"
+                android:text="@string/details"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/_40sdp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:gravity="left"
+                android:text="Highest Educational Attainment"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_16sdp"
+                android:layout_height="wrap_content"/>
+
+            <Spinner
+                android:id="@+id/highestView"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:spinnerMode="dropdown"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:gravity="left"
+                android:text="What language(s) do you speak ?"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_16sdp"
+                android:layout_height="wrap_content"/>
+
+
+            <Spinner
+                android:id="@+id/languageView"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:spinnerMode="dropdown"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:gravity="left"
+                android:text="How fluent are you in speaking the language(s) ?"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_16sdp"
+                android:layout_height="wrap_content"/>
+
+
+            <Spinner
+                android:id="@+id/fluentView"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:spinnerMode="dropdown"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/signUp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_1sdp"
+                android:background="@drawable/round_button"
+                android:text="Sign Up"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
