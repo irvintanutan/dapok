@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.google.android.material.navigation.NavigationView;
 import com.jeff.dapok.R;
@@ -32,8 +33,7 @@ public class ContributionFragment extends Fragment {
     ImageView back;
     WormDotsIndicator indicator;
     int currentPage = 0;
-
-
+    
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";

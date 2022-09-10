@@ -12,9 +12,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.jeff.dapok.R;
@@ -24,6 +26,7 @@ public class ContributeActivity extends AppCompatActivity {
 
     ImageView back;
     TextView languageText;
+    Spinner languageSpinner;
     private AlertDialog finalDialog = null;
 
     @Override
@@ -32,11 +35,17 @@ public class ContributeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         setContentView(R.layout.activity_contribute);
         languageText = findViewById(R.id.localLanguageText);
+        languageSpinner = findViewById(R.id.language);
         languageText.setText(intent.getStringExtra("language"));
         back = findViewById(R.id.back);
         back.setOnClickListener(view -> {
             back();
         });
+
+        ArrayAdapter<CharSequence> languageAdapter = ArrayAdapter.createFromResource(getApplicationContext(),
+                R.array.languages, android.R.layout.simple_spinner_item);
+        languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        languageSpinner.setAdapter(languageAdapter);
     }
 
 

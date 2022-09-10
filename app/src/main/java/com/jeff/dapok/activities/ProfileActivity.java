@@ -25,6 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
+    private ActionBar actionBar;
 
 
     @Override
@@ -35,7 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
         // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
         actionBar.setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -67,18 +68,23 @@ public class ProfileActivity extends AppCompatActivity {
         Class fragmentClass = null;
         switch (menuItem.getItemId()) {
             case R.id.profile:
+                setToolbarPrimaryTheme();
                 fragmentClass = ProfileFragment.class;
                 break;
             case R.id.contributions:
+                setToolbarWhiteTheme();
                 fragmentClass = ContributionFragment.class;
                 break;
             case R.id.about:
+                setToolbarPrimaryTheme();
                 fragmentClass = AboutFragment.class;
                 break;
             case R.id.achievements:
+                setToolbarWhiteTheme();
                 fragmentClass = AchievementFragment.class;
                 break;
             case R.id.faq:
+                setToolbarPrimaryTheme();
                 fragmentClass = FaqFragment.class;
                 break;
         }
@@ -101,6 +107,26 @@ public class ProfileActivity extends AppCompatActivity {
         mDrawer.closeDrawers();
     }
 
+
+    void setToolbarPrimaryTheme(){
+        toolbar.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.primaryColor));
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24_white);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    void setToolbarWhiteTheme(){
+        toolbar.setBackgroundColor(getResources().getColor(R.color.white));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
