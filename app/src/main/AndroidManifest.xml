@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dapok">
-        <activity android:name=".activities.ContributeActivity"></activity>
+        <activity android:name=".activities.ContributionDetailActivity"></activity>
+        <activity android:name=".activities.ContributionActivity" />
+        <activity android:name=".activities.profile.PasswordActivity" />
+        <activity android:name=".activities.profile.BackgroundActivity" />
+        <activity android:name=".activities.profile.AccountActivity" />
+        <activity android:name=".activities.ContributeActivity" />
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.PersonalInformationActivity" />
         <activity android:name=".activities.LoginActivity" />

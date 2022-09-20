@@ -1,15 +1,24 @@
 package com.jeff.dapok.fragments.drawer;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.jeff.dapok.R;
+import com.jeff.dapok.activities.LoginSignUpActivity;
+import com.jeff.dapok.activities.PersonalInformationActivity;
+import com.jeff.dapok.activities.profile.AccountActivity;
+import com.jeff.dapok.activities.profile.BackgroundActivity;
+import com.jeff.dapok.activities.profile.PasswordActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +26,16 @@ import com.jeff.dapok.R;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
+
+    @BindView(R.id.account)
+    LinearLayout account;
+
+    @BindView(R.id.password)
+    LinearLayout password;
+
+    @BindView(R.id.background)
+    LinearLayout background;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -63,6 +82,27 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        ButterKnife.bind(this, rootView);
+
+        account.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity() , AccountActivity.class);
+            startActivity(intent);
+            getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        });
+
+        background.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity() , BackgroundActivity.class);
+            startActivity(intent);
+            getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        });
+
+        password.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity() , PasswordActivity.class);
+            startActivity(intent);
+            getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        });
+
+        return  rootView;
     }
 }

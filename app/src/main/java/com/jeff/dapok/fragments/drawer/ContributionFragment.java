@@ -1,7 +1,9 @@
 package com.jeff.dapok.fragments.drawer;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -17,6 +19,9 @@ import android.widget.Spinner;
 
 import com.google.android.material.navigation.NavigationView;
 import com.jeff.dapok.R;
+import com.jeff.dapok.activities.ContributeActivity;
+import com.jeff.dapok.activities.ContributionActivity;
+import com.jeff.dapok.activities.profile.AccountActivity;
 import com.jeff.dapok.adapter.LanguageIndicatorAdapter;
 import com.jeff.dapok.adapter.PagerIndicatorAdapter;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
@@ -32,8 +37,9 @@ public class ContributionFragment extends Fragment {
     ViewPager mPager;
     ImageView back;
     WormDotsIndicator indicator;
+    CardView cardView;
     int currentPage = 0;
-    
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -81,7 +87,13 @@ public class ContributionFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contribution, container, false);
         ButterKnife.bind(this, rootView);
         indicator = rootView.findViewById(R.id.dot);
+        cardView = rootView.findViewById(R.id.cv);
 
+        cardView.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity() , ContributionActivity.class);
+            startActivity(intent);
+            getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        });
 
         mPager = rootView.findViewById(R.id.pager);
         mAdapter = new LanguageIndicatorAdapter(getActivity().getSupportFragmentManager());
@@ -98,7 +110,7 @@ public class ContributionFragment extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 currentPage = position;
-                Log.e("CURRENTPAGE" , Integer.toString(currentPage));
+                Log.e("CURRENTPAGE", Integer.toString(currentPage));
             }
 
             @Override

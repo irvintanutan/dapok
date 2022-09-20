@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".activities.profile.BackgroundActivity">
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_30sdp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:textColor="@color/white"
+        android:text="Educational Background"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:textSize="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        app:contentPadding="@dimen/_30sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-20dp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_5sdp">
+    <LinearLayout
+        android:padding="@dimen/_20sdp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:gravity="left"
+            android:text="Highest Educational Attainment"
+            android:layout_width="match_parent"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/francois_one"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/education"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:spinnerMode="dropdown"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="left"
+            android:text="What Language(s) do you speak ?"
+            android:layout_width="match_parent"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/francois_one"
+            android:textSize="@dimen/_15sdp"
+            android:hint="#nadine"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/language"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:spinnerMode="dropdown"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:gravity="left"
+            android:text="How fluent are you in speaking the language(s)"
+            android:layout_width="match_parent"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/francois_one"
+            android:textSize="@dimen/_15sdp"
+            android:hint="NLustre@gmail.com"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/fluent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:spinnerMode="dropdown"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_1sdp"
+                android:background="@drawable/round_button"
+                android:text="Save"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
